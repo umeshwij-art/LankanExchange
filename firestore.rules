@@ -1,0 +1,191 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users
+    // Document ID: {uid} (Auth UID)
+    // Fields:
+    //   - uid: string (required) - Firebase Auth UID
+    //   - email: string (required) - User email
+    //   - displayName: string (optional) - User display name
+    //   - photoURL: string (optional) - User photo URL
+    //   - tier: string (required, enum: ['free', 'pro']) - Subscription tier
+    //   - createdAt: string (required, ISO 8601) - Creation timestamp
+    //   - billing: map (optional) - Billing details
+    //     - address: string
+    //     - country: string
+    //     - updatedAt: string (ISO 8601)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (request.auth.token.email == "umeshwij@gmail.com" && request.auth.token.email_verified == true) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+    }
+
+    // Default deny for all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidDateString(dateStr) {
+      return dateStr is string && dateStr.matches("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.*");
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // Domain Validator for UserProfile
+    function isValidUser(data, userId) {
+      return hasOnlyAllowedFields(['uid', 'email', 'displayName', 'photoURL', 'tier', 'role', 'createdAt', 'billing', 'watchlist', 'availableCash', 'reservedCash', 'totalRealizedPL']) &&
+             data.uid == userId &&
+             isValidEmail(data.email) &&
+             data.tier in ['free', 'pro', 'ultimate'] &&
+             (!('role' in data) || data.role in ['user', 'admin']) &&
+             (!('createdAt' in data) || isValidDateString(data.createdAt)) &&
+             (!('watchlist' in data) || data.watchlist is list) &&
+             (!('availableCash' in data) || data.availableCash is number) &&
+             (!('reservedCash' in data) || data.reservedCash is number) &&
+             (!('totalRealizedPL' in data) || data.totalRealizedPL is number) &&
+             (!('billing' in data) || (
+               data.billing is map && 
+               data.billing.keys().hasOnly(['address', 'country', 'updatedAt']) &&
+               (!('updatedAt' in data.billing) || isValidDateString(data.billing.updatedAt))
+             ));
+    }
+
+    function isValidTrade(data) {
+      return hasOnlyAllowedFields(['uid', 'symbol', 'type', 'quantity', 'price', 'commission', 'total', 'aiCritique', 'timestamp']) &&
+             (data.uid == request.auth.uid || isAdmin()) &&
+             data.type in ['buy', 'sell'] &&
+             data.quantity is number &&
+             data.price is number &&
+             isValidDateString(data.timestamp);
+    }
+
+    function isValidPosition(data) {
+      return hasOnlyAllowedFields(['uid', 'symbol', 'quantity', 'reservedQuantity', 'avgPrice', 'totalCost', 'lastUpdated']) &&
+             (data.uid == request.auth.uid || isAdmin()) &&
+             data.symbol is string &&
+             data.quantity is number &&
+             (!('reservedQuantity' in data) || data.reservedQuantity is number) &&
+             data.avgPrice is number &&
+             (!('lastUpdated' in data) || isValidDateString(data.lastUpdated));
+    }
+
+    function isValidOrder(data) {
+      return hasOnlyAllowedFields(['uid', 'symbol', 'type', 'orderType', 'quantity', 'limitPrice', 'status', 'timestamp']) &&
+             (data.uid == request.auth.uid || isAdmin()) &&
+             data.type in ['buy', 'sell'] &&
+             data.orderType in ['market', 'limit'] &&
+             data.quantity is number &&
+             (!('limitPrice' in data) || data.limitPrice is number) &&
+             data.status in ['pending', 'filled', 'cancelled'] &&
+             isValidDateString(data.timestamp);
+    }
+
+    function isValidAnnouncement(data) {
+      return hasOnlyAllowedFields(['symbol', 'title', 'type', 'date', 'pdfUrl', 'amount', 'xdDate', 'year', 'createdAt']) &&
+             data.symbol is string &&
+             data.title is string &&
+             data.type in ['Dividend', 'Annual Report', 'Quarterly Results', 'Other'] &&
+             isValidDateString(data.createdAt);
+    }
+
+    function isValidFeedback(data) {
+      return hasOnlyAllowedFields(['text', 'uid', 'alias', 'category', 'upvotes', 'aiReply', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.text is string &&
+             data.category in ['Bug 🐞', 'Feature Request ✨', 'Market Data 📊'] &&
+             isValidDateString(data.createdAt);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /feedback/{feedbackId} {
+      allow read: if true;
+      allow create: if isAuthenticated() && isValidFeedback(request.resource.data);
+      allow update: if isAuthenticated() && (
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['upvotes']) && 
+         request.resource.data.upvotes is list) ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      
+      allow create: if isOwner(userId) && 
+                      isValidUser(request.resource.data, userId) && 
+                      request.resource.data.tier == 'free' &&
+                      request.resource.data.availableCash == 1000000 &&
+                      request.resource.data.reservedCash == 0 &&
+                      (request.resource.data.role == 'user' || isAdmin());
+      
+      allow update: if (isOwner(userId) || isAdmin()) && 
+                      // Relaxed validation for migration: only check UID and role/createdAt immutability
+                      request.resource.data.uid == userId &&
+                      (!('createdAt' in resource.data) || !('createdAt' in request.resource.data) || request.resource.data.createdAt == resource.data.createdAt) &&
+                      (request.resource.data.role == resource.data.role || isAdmin());
+    }
+
+    match /trades/{tradeId} {
+      allow read: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && isValidTrade(request.resource.data);
+    }
+
+    match /positions/{positionId} {
+      allow read: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && isValidPosition(request.resource.data);
+      allow update: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin()) && isValidPosition(request.resource.data);
+      allow delete: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin());
+    }
+
+    match /orders/{orderId} {
+      allow read: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && isValidOrder(request.resource.data);
+      allow update: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin()) && isValidOrder(request.resource.data);
+      allow delete: if isAuthenticated() && (resource.data.uid == request.auth.uid || isAdmin());
+    }
+
+    match /waitlist/{email} {
+      allow create: if true; // Anyone can join waitlist
+      allow read: if isAdmin();
+    }
+
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Stores user information, subscription tier, and trading balances.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "tier": { "type": "string", "enum": ["free", "pro", "ultimate"], "description": "User subscription level" },
+        "role": { "type": "string", "enum": ["user", "admin"], "description": "User role for permissions" },
+        "watchlist": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of stock symbols in user's watchlist"
+        },
+        "availableCash": { "type": "number", "description": "User's spendable virtual cash balance in LKR" },
+        "reservedCash": { "type": "number", "description": "Cash locked for pending limit orders" },
+        "totalRealizedPL": { "type": "number", "description": "Total realized profit/loss" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "tier", "availableCash", "reservedCash"]
+    },
+    "Position": {
+      "title": "Position",
+      "description": "Current stock holdings for a user.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "symbol": { "type": "string" },
+        "quantity": { "type": "number" },
+        "reservedQuantity": { "type": "number", "description": "Quantity locked in open sell limit orders" },
+        "avgPrice": { "type": "number" },
+        "totalCost": { "type": "number" },
+        "lastUpdated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "symbol", "quantity", "avgPrice"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Pending limit orders.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "symbol": { "type": "string" },
+        "type": { "type": "string", "enum": ["buy", "sell"] },
+        "orderType": { "type": "string", "enum": ["market", "limit"] },
+        "quantity": { "type": "number" },
+        "limitPrice": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "filled", "cancelled"] },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "symbol", "type", "orderType", "quantity", "status", "timestamp"]
+    },
+    "WaitlistEntry": {
+      "title": "Waitlist Entry",
+      "description": "Stores user interest in premium tiers.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "tier": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "tier", "createdAt"]
+    },
+    "Trade": {
+      "title": "Trade",
+      "description": "Stores mock trade execution details.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "symbol": { "type": "string" },
+        "type": { "type": "string", "enum": ["buy", "sell"] },
+        "quantity": { "type": "number" },
+        "price": { "type": "number" },
+        "commission": { "type": "number" },
+        "total": { "type": "number" },
+        "aiCritique": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "symbol", "type", "quantity", "price", "timestamp"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Stores regulatory announcements from CSE.",
+      "type": "object",
+      "properties": {
+        "symbol": { "type": "string" },
+        "title": { "type": "string" },
+        "type": { "type": "string", "enum": ["Dividend", "Annual Report", "Quarterly Results", "Other"] },
+        "date": { "type": "string", "format": "date" },
+        "pdfUrl": { "type": "string" },
+        "amount": { "type": "number", "description": "Dividend amount if applicable" },
+        "xdDate": { "type": "string", "format": "date", "description": "XD date for dividends" },
+        "year": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["symbol", "title", "type", "date", "createdAt"]
+    },
+    "Feedback": {
+      "title": "Feedback",
+      "description": "User feedback and feature requests for the community lab.",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "uid": { "type": "string" },
+        "alias": { "type": "string" },
+        "category": { "type": "string", "enum": ["Bug 🐞", "Feature Request ✨", "Market Data 📊"] },
+        "upvotes": { "type": "array", "items": { "type": "string" }, "description": "Array of UIDs of users who upvoted" },
+        "aiReply": { "type": "string", "description": "Instant AI response" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["text", "uid", "alias", "category", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profile documents keyed by Auth UID."
+    },
+    "/waitlist/{email}": {
+      "schema": "WaitlistEntry",
+      "description": "Waitlist entries keyed by email."
+    },
+    "/trades/{tradeId}": {
+      "schema": "Trade",
+      "description": "Mock trade history."
+    },
+    "/positions/{positionId}": {
+      "schema": "Position",
+      "description": "User stock positions."
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Pending limit orders."
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Regulatory announcements and financial reports."
+    },
+    "/feedback/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "Public community feedback and requests."
+    }
+  }
+}

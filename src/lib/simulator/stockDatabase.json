@@ -1,0 +1,2882 @@
+[
+  {
+    "symbol": "ABAN.N0000",
+    "name": "ABANS ELECTRICALS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1229.5
+  },
+  {
+    "symbol": "AFSL.N0000",
+    "name": "ABANS FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 91
+  },
+  {
+    "symbol": "AEL.N0000",
+    "name": "ACCESS ENGINEERING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 76.4
+  },
+  {
+    "symbol": "ACL.N0000",
+    "name": "ACL CABLES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 93.5
+  },
+  {
+    "symbol": "APLA.N0000",
+    "name": "ACL PLASTICS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 155
+  },
+  {
+    "symbol": "ACME.N0000",
+    "name": "ACME PRINTING & PACKAGING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 6.4
+  },
+  {
+    "symbol": "AGAL.N0000",
+    "name": "AGALAWATTE  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 53
+  },
+  {
+    "symbol": "AGST.N0000",
+    "name": "AGSTAR PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 10.6
+  },
+  {
+    "symbol": "AGST.X0000",
+    "name": "AGSTAR PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.6
+  },
+  {
+    "symbol": "AHUN.N0000",
+    "name": "AITKEN SPENCE HOTEL HOLDINGS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 100
+  },
+  {
+    "symbol": "SPEN.N0000",
+    "name": "AITKEN SPENCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 140
+  },
+  {
+    "symbol": "ALLI.N0000",
+    "name": "ALLIANCE FINANCE COMPANY PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 344.5
+  },
+  {
+    "symbol": "AFS.N0000",
+    "name": "ALPHA FIRE SERVICES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 38
+  },
+  {
+    "symbol": "ALUM.N0000",
+    "name": "ALUMEX PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.9
+  },
+  {
+    "symbol": "ABL.N0000",
+    "name": "AMANA BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 28.8
+  },
+  {
+    "symbol": "ATL.N0000",
+    "name": "AMANA TAKAFUL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 20.8
+  },
+  {
+    "symbol": "ATLL.N0000",
+    "name": "AMANA TAKAFUL LIFE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 25
+  },
+  {
+    "symbol": "TAP.N0000",
+    "name": "AMBEON CAPITAL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 36.4
+  },
+  {
+    "symbol": "GREG.N0000",
+    "name": "AMBEON HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 158.5
+  },
+  {
+    "symbol": "AINS.N0000",
+    "name": "ARPICO INSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 30
+  },
+  {
+    "symbol": "AAF.N0000",
+    "name": "ASIA ASSET FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 56.9
+  },
+  {
+    "symbol": "ASIY.N0000",
+    "name": "ASIA SIYAKA COMMODITIES LIMITED",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 15.1
+  },
+  {
+    "symbol": "AHPL.N0000",
+    "name": "ASIAN HOTELS AND PROPERTIES PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 55
+  },
+  {
+    "symbol": "AMSL.N0000",
+    "name": "ASIRI SURGICAL HOSPITAL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.6
+  },
+  {
+    "symbol": "ASIR.N0000",
+    "name": "ASIRI HOSPITAL HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 33.5
+  },
+  {
+    "symbol": "AMF.N0000",
+    "name": "ASSOCIATED MOTOR FINANCE COMPANY PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 53.9
+  },
+  {
+    "symbol": "AGPL.N0000",
+    "name": "Agarapatana Plantations PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.2
+  },
+  {
+    "symbol": "BPPL.N0000",
+    "name": "B P P L HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 18.7
+  },
+  {
+    "symbol": "BFL.N0000",
+    "name": "BAIRAHA FARMS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 80
+  },
+  {
+    "symbol": "BALA.N0000",
+    "name": "BALANGODA  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 61.9
+  },
+  {
+    "symbol": "BRR.N0000",
+    "name": "BANSEI ROYAL RESORTS HIKKADUWA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 20.5
+  },
+  {
+    "symbol": "BERU.N0000",
+    "name": "BERUWALA RESORTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 3.8
+  },
+  {
+    "symbol": "BOGA.N0000",
+    "name": "BOGALA GRAPHITE LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 134.75
+  },
+  {
+    "symbol": "BOPL.N0000",
+    "name": "BOGAWANTALAWA TEA ESTATES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 70.9
+  },
+  {
+    "symbol": "BRWN.N0000",
+    "name": "BROWN & COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 162.5
+  },
+  {
+    "symbol": "BIL.N0000",
+    "name": "BROWNS INVESTMENTS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 6.4
+  },
+  {
+    "symbol": "BUKI.N0000",
+    "name": "BUKIT DARAH PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 896
+  },
+  {
+    "symbol": "COLO.N0000",
+    "name": "C M HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.3
+  },
+  {
+    "symbol": "CTHR.N0000",
+    "name": "C T HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 600
+  },
+  {
+    "symbol": "CTLD.N0000",
+    "name": "C T LAND DEVELOPMENT PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 39
+  },
+  {
+    "symbol": "CWM.N0000",
+    "name": "C. W. MACKIE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 39.9
+  },
+  {
+    "symbol": "CSLK.N0000",
+    "name": "CABLE SOLUTIONS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13
+  },
+  {
+    "symbol": "CALC.U0000",
+    "name": "CAL FIVE YEAR CLOSED END FUND (“Units”)",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13.7
+  },
+  {
+    "symbol": "CALI.U0000",
+    "name": "CAL FIVE YEAR OPTIMUM FUND (“Units”)",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 15.1
+  },
+  {
+    "symbol": "CALU.U0000",
+    "name": "CAL THREE YEAR CLOSED END FUND (“Units”)",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 10.6
+  },
+  {
+    "symbol": "CALH.N0000",
+    "name": "CAPITAL ALLIANCE HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 15.9
+  },
+  {
+    "symbol": "CALT.N0000",
+    "name": "CAPITAL ALLIANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 53.3
+  },
+  {
+    "symbol": "CARG.N0000",
+    "name": "CARGILLS (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 708
+  },
+  {
+    "symbol": "CBNK.N0000",
+    "name": "CARGILLS BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 8.9
+  },
+  {
+    "symbol": "CABO.N0000",
+    "name": "CARGO BOAT DEVELOPMENT COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 225
+  },
+  {
+    "symbol": "CARS.N0000",
+    "name": "CARSON CUMBERBATCH PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 721
+  },
+  {
+    "symbol": "CFIN.N0000",
+    "name": "CENTRAL FINANCE COMPANY PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 239
+  },
+  {
+    "symbol": "CIND.N0000",
+    "name": "CENTRAL INDUSTRIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 233.25
+  },
+  {
+    "symbol": "CINS.N0000",
+    "name": "CEYLINCO HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 3248.25
+  },
+  {
+    "symbol": "CINS.X0000",
+    "name": "CEYLINCO HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1699
+  },
+  {
+    "symbol": "BREW.N0000",
+    "name": "CEYLON BEVERAGE HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 2800
+  },
+  {
+    "symbol": "CCS.N0000",
+    "name": "CEYLON COLD STORES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 110
+  },
+  {
+    "symbol": "GRAN.N0000",
+    "name": "CEYLON GRAIN ELEVATORS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 434
+  },
+  {
+    "symbol": "GUAR.N0000",
+    "name": "CEYLON GUARDIAN INVESTMENT TRUST PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 246
+  },
+  {
+    "symbol": "CHL.N0000",
+    "name": "CEYLON HOSPITALS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 64.9
+  },
+  {
+    "symbol": "CHL.X0000",
+    "name": "CEYLON HOSPITALS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 54
+  },
+  {
+    "symbol": "CHOT.N0000",
+    "name": "CEYLON HOTELS CORPORATION PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 37.9
+  },
+  {
+    "symbol": "CINV.N0000",
+    "name": "CEYLON INVESTMENT PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 114
+  },
+  {
+    "symbol": "KZOO.N0000",
+    "name": "CEYLON LAND & EQUITY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.4
+  },
+  {
+    "symbol": "CTBL.N0000",
+    "name": "CEYLON TEA BROKERS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.9
+  },
+  {
+    "symbol": "CTC.N0000",
+    "name": "CEYLON TOBACCO COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1767
+  },
+  {
+    "symbol": "CHMX.N0000",
+    "name": "CHEMANEX PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 165
+  },
+  {
+    "symbol": "LLUB.N0000",
+    "name": "CHEVRON LUBRICANTS  LANKA  PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 191.5
+  },
+  {
+    "symbol": "CWL.N0000",
+    "name": "CHRISSWORLD PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 18.3
+  },
+  {
+    "symbol": "CIC.N0000",
+    "name": "C I C HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 32.8
+  },
+  {
+    "symbol": "CIC.X0000",
+    "name": "C I C HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 26
+  },
+  {
+    "symbol": "CDB.X0000",
+    "name": "CITIZENS DEVELOPMENT BUSINESS FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 320
+  },
+  {
+    "symbol": "CDB.N0000",
+    "name": "CITIZENS DEVELOPMENT BUSINESS FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 406
+  },
+  {
+    "symbol": "REEF.N0000",
+    "name": "CITRUS LEISURE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 4.3
+  },
+  {
+    "symbol": "COOP.N0000",
+    "name": "Co-operative Insurance Company PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 4
+  },
+  {
+    "symbol": "PHAR.N0000",
+    "name": "COLOMBO CITY HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 148.5
+  },
+  {
+    "symbol": "DOCK.N0000",
+    "name": "COLOMBO DOCKYARD PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 136.5
+  },
+  {
+    "symbol": "CFI.N0000",
+    "name": "COLOMBO FORT INVESTMENTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 397.75
+  },
+  {
+    "symbol": "CIT.N0000",
+    "name": "COLOMBO INVESTMENT TRUST PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 477.5
+  },
+  {
+    "symbol": "CLND.N0000",
+    "name": "COLOMBO LAND AND DEVELOPMENT COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 65
+  },
+  {
+    "symbol": "COMB.N0000",
+    "name": "COMMERCIAL BANK OF CEYLON PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 210.25
+  },
+  {
+    "symbol": "COMB.X0000",
+    "name": "COMMERCIAL BANK OF CEYLON PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 192.75
+  },
+  {
+    "symbol": "COCR.N0000",
+    "name": "COMMERCIAL CREDIT AND FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 126.5
+  },
+  {
+    "symbol": "COMD.N0000",
+    "name": "COMMERCIAL DEVELOPMENT COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 319.75
+  },
+  {
+    "symbol": "SOY.N0000",
+    "name": "CONVENIENCE FOODS LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 2593
+  },
+  {
+    "symbol": "DPL.N0000",
+    "name": "DANKOTUWA PORCELAIN PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.5
+  },
+  {
+    "symbol": "DFCC.N0000",
+    "name": "DFCC BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 145.75
+  },
+  {
+    "symbol": "DIAL.N0000",
+    "name": "DIALOG AXIATA PLC",
+    "sector": "Telecommunication Services",
+    "profile": {
+      "baseVolatility": 0.12,
+      "baseDrift": 0.03
+    },
+    "lastClose": 33.2
+  },
+  {
+    "symbol": "CALF.N0000",
+    "name": "DIALOG FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 139.75
+  },
+  {
+    "symbol": "DIMO.N0000",
+    "name": "DIESEL & MOTOR ENGINEERING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1500
+  },
+  {
+    "symbol": "PKME.N0000",
+    "name": "DIGITAL MOBILITY SOLUTIONS LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 146
+  },
+  {
+    "symbol": "CTEA.N0000",
+    "name": "DILMAH CEYLON TEA COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1411
+  },
+  {
+    "symbol": "DIPD.N0000",
+    "name": "DIPPED PRODUCTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 55.9
+  },
+  {
+    "symbol": "DIST.N0000",
+    "name": "DISTILLERIES COMPANY OF SRI LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 57.5
+  },
+  {
+    "symbol": "STAF.N0000",
+    "name": "DOLPHIN HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 47.9
+  },
+  {
+    "symbol": "EBCR.N0000",
+    "name": "E B CREASY & COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 51
+  },
+  {
+    "symbol": "EML.N0000",
+    "name": "E M L CONSULTANTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 10.4
+  },
+  {
+    "symbol": "ECL.N0000",
+    "name": "E - CHANNELLING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 15.1
+  },
+  {
+    "symbol": "EAST.N0000",
+    "name": "EAST WEST PROPERTIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 65
+  },
+  {
+    "symbol": "EMER.N0000",
+    "name": "EASTERN MERCHANTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 12.6
+  },
+  {
+    "symbol": "EDEN.N0000",
+    "name": "EDEN HOTEL LANKA PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 12
+  },
+  {
+    "symbol": "ELPL.N0000",
+    "name": "ELPITIYA PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 173
+  },
+  {
+    "symbol": "ETWO.N0000",
+    "name": "EQUITY TWO PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 65
+  },
+  {
+    "symbol": "PACK.N0000",
+    "name": "Ex-pack Corrugated Cartons PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13.6
+  },
+  {
+    "symbol": "EXT.N0000",
+    "name": "EXTERMINATORS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.8
+  },
+  {
+    "symbol": "CFVF.N0000",
+    "name": "FIRST CAPITAL HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 56.4
+  },
+  {
+    "symbol": "FCT.N0000",
+    "name": "First Capital Treasuries PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 32.2
+  },
+  {
+    "symbol": "GHLL.N0000",
+    "name": "GALADARI HOTELS (LANKA) PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 17.5
+  },
+  {
+    "symbol": "WAPO.N0000",
+    "name": "GALLE FACE CAPITAL PARTNERS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 26.1
+  },
+  {
+    "symbol": "GEST.N0000",
+    "name": "GESTETNER OF CEYLON PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 310
+  },
+  {
+    "symbol": "MEL.N0000",
+    "name": "GREENTECH ENERGY PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 6.4
+  },
+  {
+    "symbol": "HAPU.N0000",
+    "name": "HAPUGASTENNE PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 54.4
+  },
+  {
+    "symbol": "HARI.N0000",
+    "name": "HARISCHANDRA MILLS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 5250
+  },
+  {
+    "symbol": "HNB.X0000",
+    "name": "HATTON NATIONAL BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 349
+  },
+  {
+    "symbol": "HNB.N0000",
+    "name": "HATTON NATIONAL BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 414
+  },
+  {
+    "symbol": "HPL.N0000",
+    "name": "HATTON PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 24.8
+  },
+  {
+    "symbol": "HAYC.N0000",
+    "name": "HAYCARB PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 120.5
+  },
+  {
+    "symbol": "MGT.N0000",
+    "name": "HAYLEYS FABRIC PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 30.5
+  },
+  {
+    "symbol": "HEXP.N0000",
+    "name": "HAYLEYS FIBRE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 117
+  },
+  {
+    "symbol": "CONN.N0000",
+    "name": "HAYLEYS LEISURE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 31.9
+  },
+  {
+    "symbol": "HAYL.N0000",
+    "name": "HAYLEYS PLC",
+    "sector": "Capital Goods",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.06
+    },
+    "lastClose": 223.5
+  },
+  {
+    "symbol": "HELA.N0000",
+    "name": "HELA APPAREL HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 2.9
+  },
+  {
+    "symbol": "HHL.N0000",
+    "name": "HEMAS HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 31.5
+  },
+  {
+    "symbol": "CITH.N0000",
+    "name": "HIKKADUWA BEACH RESORT PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 6
+  },
+  {
+    "symbol": "HNBF.N0000",
+    "name": "HNB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 9.7
+  },
+  {
+    "symbol": "HNBF.X0000",
+    "name": "HNB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 9
+  },
+  {
+    "symbol": "HASU.N0000",
+    "name": "HNB LIFE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 141.5
+  },
+  {
+    "symbol": "HOPL.N0000",
+    "name": "HORANA PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 48
+  },
+  {
+    "symbol": "HSIG.N0000",
+    "name": "HOTEL SIGIRIYA PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 75.8
+  },
+  {
+    "symbol": "HDFC.N0000",
+    "name": "HOUSING DEVELOPMENT FINANCE CORPORATION BANK OF SL",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 57.5
+  },
+  {
+    "symbol": "HBS.N0000",
+    "name": "hSenid Business Solutions PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 21.4
+  },
+  {
+    "symbol": "HUNA.N0000",
+    "name": "HUNAS HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 18.2
+  },
+  {
+    "symbol": "HUNT.N0000",
+    "name": "HUNTER & COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1245
+  },
+  {
+    "symbol": "HVA.N0000",
+    "name": "HVA FOODS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 8.3
+  },
+  {
+    "symbol": "ASPH.N0000",
+    "name": "INDUSTRIAL ASPHALTS (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 0.5
+  },
+  {
+    "symbol": "INME.N0000",
+    "name": "INSUREME INSURANCE BROKERS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1400
+  },
+  {
+    "symbol": "BFN.N0000",
+    "name": "JANASHAKTHI FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 42.2
+  },
+  {
+    "symbol": "JINS.N0000",
+    "name": "JANASHAKTHI INSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.7
+  },
+  {
+    "symbol": "JAT.N0000",
+    "name": "JAT HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 42.3
+  },
+  {
+    "symbol": "JETS.N0000",
+    "name": "JETWING SYMPHONY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.1
+  },
+  {
+    "symbol": "JFP.N0000",
+    "name": "JF PACKAGING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 15.6
+  },
+  {
+    "symbol": "JKH.N0000",
+    "name": "JOHN KEELLS HOLDINGS PLC",
+    "sector": "Capital Goods",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.06
+    },
+    "lastClose": 20.2
+  },
+  {
+    "symbol": "KHL.N0000",
+    "name": "JOHN KEELLS HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 17
+  },
+  {
+    "symbol": "JKL.N0000",
+    "name": "JOHN KEELLS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 83.6
+  },
+  {
+    "symbol": "KAHA.N0000",
+    "name": "KAHAWATTE  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 19.9
+  },
+  {
+    "symbol": "KPHL.N0000",
+    "name": "KAPRUKA HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 29.4
+  },
+  {
+    "symbol": "KFP.N0000",
+    "name": "KEELLS FOOD PRODUCTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 165
+  },
+  {
+    "symbol": "KGAL.N0000",
+    "name": "KEGALLE  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 141
+  },
+  {
+    "symbol": "KCAB.N0000",
+    "name": "KELANI CABLES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 109
+  },
+  {
+    "symbol": "TYRE.N0000",
+    "name": "KELANI TYRES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 90
+  },
+  {
+    "symbol": "KVAL.N0000",
+    "name": "KELANI VALLEY PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 83
+  },
+  {
+    "symbol": "KOTA.N0000",
+    "name": "KOTAGALA PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 8.5
+  },
+  {
+    "symbol": "LAMB.N0000",
+    "name": "KOTMALE HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1357
+  },
+  {
+    "symbol": "LFIN.N0000",
+    "name": "LB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 151.5
+  },
+  {
+    "symbol": "LPRT.N0000",
+    "name": "LAKE HOUSE PRINTERS & PUBLISHERS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 690
+  },
+  {
+    "symbol": "LALU.N0000",
+    "name": "LANKA ALUMINIUM INDUSTRIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.3
+  },
+  {
+    "symbol": "ASHO.N0000",
+    "name": "LANKA ASHOK LEYLAND PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 3209
+  },
+  {
+    "symbol": "CERA.N0000",
+    "name": "LANKA CERAMIC PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 178.5
+  },
+  {
+    "symbol": "LCBF.N0000",
+    "name": "LANKA CREDIT AND BUSINESS FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 8.3
+  },
+  {
+    "symbol": "LIOC.N0000",
+    "name": "LANKA IOC PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 140.75
+  },
+  {
+    "symbol": "LMF.N0000",
+    "name": "LANKA MILK FOODS (CWE) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 94.2
+  },
+  {
+    "symbol": "ASCO.N0000",
+    "name": "LANKA REALTY INVESTMENTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.9
+  },
+  {
+    "symbol": "TILE.N0000",
+    "name": "LANKA TILES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 45
+  },
+  {
+    "symbol": "LVEN.N0000",
+    "name": "LANKA VENTURES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 61.3
+  },
+  {
+    "symbol": "LWL.N0000",
+    "name": "LANKA WALLTILE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 48.2
+  },
+  {
+    "symbol": "LCEY.N0000",
+    "name": "LANKEM CEYLON PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 41.9
+  },
+  {
+    "symbol": "LDEV.N0000",
+    "name": "LANKEM DEVELOPMENTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 19.2
+  },
+  {
+    "symbol": "LGL.N0000",
+    "name": "LAUGFS GAS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 63
+  },
+  {
+    "symbol": "LGL.X0000",
+    "name": "LAUGFS GAS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 44.7
+  },
+  {
+    "symbol": "LPL.X0000",
+    "name": "LAUGFS POWER PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 9.3
+  },
+  {
+    "symbol": "LPL.N0000",
+    "name": "LAUGFS POWER PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 11.5
+  },
+  {
+    "symbol": "LITE.N0000",
+    "name": "LAXAPANA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 39.7
+  },
+  {
+    "symbol": "SHAW.N0000",
+    "name": "LEE HEDGES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 235
+  },
+  {
+    "symbol": "LION.N0000",
+    "name": "LION BREWERY (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1750
+  },
+  {
+    "symbol": "LOFC.N0000",
+    "name": "LOLC FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 5.6
+  },
+  {
+    "symbol": "LGIL.N0000",
+    "name": "LOLC GENERAL INSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 7.6
+  },
+  {
+    "symbol": "LOLC.N0000",
+    "name": "L O L C HOLDINGS PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 555.5
+  },
+  {
+    "symbol": "HPFL.N0000",
+    "name": "LOTUS HYDRO POWER PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 14.3
+  },
+  {
+    "symbol": "LUMX.N0000",
+    "name": "LUMINEX PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 8.8
+  },
+  {
+    "symbol": "LVEF.N0000",
+    "name": "L V L ENERGY FUND PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 8.3
+  },
+  {
+    "symbol": "MADU.N0000",
+    "name": "MADULSIMA  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 12
+  },
+  {
+    "symbol": "MFPE.N0000",
+    "name": "MAHARAJA FOODS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13.2
+  },
+  {
+    "symbol": "MCPL.N0000",
+    "name": "MAHAWELI COCONUT PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 53
+  },
+  {
+    "symbol": "MRH.N0000",
+    "name": "MAHAWELI REACH HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 17.5
+  },
+  {
+    "symbol": "MAL.X0000",
+    "name": "MALWATTE VALLEY PLANTATION PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 40
+  },
+  {
+    "symbol": "MARA.N0000",
+    "name": "MARAWILA  RESORTS  PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 6.6
+  },
+  {
+    "symbol": "MASK.N0000",
+    "name": "MASKELIYA PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 72
+  },
+  {
+    "symbol": "MELS.N0000",
+    "name": "MELSTACORP PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 179.75
+  },
+  {
+    "symbol": "MERC.N0000",
+    "name": "MERCANTILE INVESTMENTS AND FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 29.4
+  },
+  {
+    "symbol": "MSL.N0000",
+    "name": "MERCANTILE SHIPPING COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 202
+  },
+  {
+    "symbol": "MBSL.N0000",
+    "name": "MERCHANT BANK OF SRI LANKA & FINANCE PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.5
+  },
+  {
+    "symbol": "MHDL.N0000",
+    "name": "MILLENNIUM HOUSING DEVELOPERS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 9.7
+  },
+  {
+    "symbol": "MULL.N0000",
+    "name": "MULLER & PHIPPS (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 2.3
+  },
+  {
+    "symbol": "MDL.N0000",
+    "name": "MYLAND DEVELOPMENTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 23
+  },
+  {
+    "symbol": "NAMU.N0000",
+    "name": "NAMUNUKULA PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 72.8
+  },
+  {
+    "symbol": "NDB.N0000",
+    "name": "NATIONAL DEVELOPMENT BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 118
+  },
+  {
+    "symbol": "NTB.X0000",
+    "name": "NATIONS TRUST BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 399.75
+  },
+  {
+    "symbol": "NTB.N0000",
+    "name": "NATIONS TRUST BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 313.75
+  },
+  {
+    "symbol": "NHL.N0000",
+    "name": "NAWALOKA HOSPITALS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 11.8
+  },
+  {
+    "symbol": "ODEL.N0000",
+    "name": "ODEL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 12.8
+  },
+  {
+    "symbol": "OFEQ.N0000",
+    "name": "OFFICE EQUIPMENT PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 535.25
+  },
+  {
+    "symbol": "ONAL.N0000",
+    "name": "ON'ALLY HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 40.9
+  },
+  {
+    "symbol": "OSEA.N0000",
+    "name": "OVERSEAS REALTY (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 45
+  },
+  {
+    "symbol": "PALM.N0000",
+    "name": "PALM GARDEN HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 61
+  },
+  {
+    "symbol": "PABC.N0000",
+    "name": "PAN ASIA BANKING CORPORATION PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 52.3
+  },
+  {
+    "symbol": "PAP.N0000",
+    "name": "PANASIAN POWER PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 19.9
+  },
+  {
+    "symbol": "PEG.N0000",
+    "name": "PEGASUS HOTELS OF CEYLON PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 42.5
+  },
+  {
+    "symbol": "PINS.N0000",
+    "name": "PEOPLE'S INSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 28.4
+  },
+  {
+    "symbol": "PLC.N0000",
+    "name": "PEOPLE'S LEASING & FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 24.4
+  },
+  {
+    "symbol": "GLAS.N0000",
+    "name": "PGP GLASS CEYLON PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 57
+  },
+  {
+    "symbol": "PMB.N0000",
+    "name": "PMF FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 12
+  },
+  {
+    "symbol": "PLR.N0000",
+    "name": "PRIME LANDS RESIDENCIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 50.8
+  },
+  {
+    "symbol": "RIL.N0000",
+    "name": "R I L PROPERTY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 29
+  },
+  {
+    "symbol": "RGEM.N0000",
+    "name": "RADIANT GEMS INTERNATIONAL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 169.5
+  },
+  {
+    "symbol": "RWSL.N0000",
+    "name": "RAIGAM WAYAMBA SALTERNS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 20.3
+  },
+  {
+    "symbol": "RFL.N0000",
+    "name": "RAMBODA FALLS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 35.8
+  },
+  {
+    "symbol": "RAL.N0000",
+    "name": "RENUKA AGRI FOODS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 14
+  },
+  {
+    "symbol": "RENU.N0000",
+    "name": "RENUKA CITY HOTELS PLC.",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 840
+  },
+  {
+    "symbol": "COCO.N0000",
+    "name": "RENUKA FOODS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 32
+  },
+  {
+    "symbol": "COCO.X0000",
+    "name": "RENUKA FOODS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 24.7
+  },
+  {
+    "symbol": "RHL.X0000",
+    "name": "RENUKA HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 42
+  },
+  {
+    "symbol": "RHL.N0000",
+    "name": "RENUKA HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 55
+  },
+  {
+    "symbol": "RCH.N0000",
+    "name": "RENUKA HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 224.75
+  },
+  {
+    "symbol": "HPWR.N0000",
+    "name": "RESUS ENERGY PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 10
+  },
+  {
+    "symbol": "RICH.N0000",
+    "name": "RICHARD PIERIS AND COMPANY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 34.4
+  },
+  {
+    "symbol": "REXP.N0000",
+    "name": "RICHARD PIERIS EXPORTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 384.25
+  },
+  {
+    "symbol": "RCL.N0000",
+    "name": "ROYAL CERAMICS LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.5
+  },
+  {
+    "symbol": "RPBH.N0000",
+    "name": "ROYAL PALMS BEACH HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 56.1
+  },
+  {
+    "symbol": "SAMP.N0000",
+    "name": "SAMPATH BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 150
+  },
+  {
+    "symbol": "SIL.N0000",
+    "name": "SAMSON INTERNATIONAL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 519
+  },
+  {
+    "symbol": "SDB.N0000",
+    "name": "SANASA DEVELOPMENT BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 54.5
+  },
+  {
+    "symbol": "SDF.N0000",
+    "name": "SARVODAYA DEVELOPMENT FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 38.6
+  },
+  {
+    "symbol": "SMOT.N0000",
+    "name": "SATHOSA MOTORS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1200
+  },
+  {
+    "symbol": "SFCL.N0000",
+    "name": "SENKADAGALA FINANCE COMPANY PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 468
+  },
+  {
+    "symbol": "SHOT.X0000",
+    "name": "SERENDIB HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 13.8
+  },
+  {
+    "symbol": "SHOT.N0000",
+    "name": "SERENDIB HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 18.1
+  },
+  {
+    "symbol": "SLND.N0000",
+    "name": "SERENDIB LAND PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1710
+  },
+  {
+    "symbol": "SEYB.N0000",
+    "name": "SEYLAN BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 105
+  },
+  {
+    "symbol": "SEYB.X0000",
+    "name": "SEYLAN BANK PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 72.7
+  },
+  {
+    "symbol": "CSD.N0000",
+    "name": "SEYLAN DEVELOPMENTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 27.5
+  },
+  {
+    "symbol": "SIRA.N0000",
+    "name": "SIERRA CABLES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 31.4
+  },
+  {
+    "symbol": "SIGV.N0000",
+    "name": "SIGIRIYA VILLAGE HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 14.8
+  },
+  {
+    "symbol": "SINS.N0000",
+    "name": "SINGER (SRI LANKA) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 91
+  },
+  {
+    "symbol": "SFIN.N0000",
+    "name": "SINGER FINANCE LANKA PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 52.1
+  },
+  {
+    "symbol": "SINH.N0000",
+    "name": "SINGHE HOSPITALS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 22.6
+  },
+  {
+    "symbol": "SEMB.N0000",
+    "name": "SMB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 0.8
+  },
+  {
+    "symbol": "SEMB.X0000",
+    "name": "SMB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 0.3
+  },
+  {
+    "symbol": "SCAP.N0000",
+    "name": "SOFTLOGIC CAPITAL PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.6
+  },
+  {
+    "symbol": "CRL.N0000",
+    "name": "SOFTLOGIC FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 7.2
+  },
+  {
+    "symbol": "SHL.N0000",
+    "name": "SOFTLOGIC HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13.1
+  },
+  {
+    "symbol": "AAIC.N0000",
+    "name": "SOFTLOGIC LIFE INSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 90
+  },
+  {
+    "symbol": "SLTL.N0000",
+    "name": "SRI LANKA TELECOM PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 86.9
+  },
+  {
+    "symbol": "SUN.N0000",
+    "name": "SUNSHINE HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 31
+  },
+  {
+    "symbol": "PARQ.N0000",
+    "name": "SWISSTEK (CEYLON) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 80.8
+  },
+  {
+    "symbol": "TAJ.N0000",
+    "name": "TAL LANKA HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 36
+  },
+  {
+    "symbol": "TPL.N0000",
+    "name": "TALAWAKELLE TEA ESTATES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 140.75
+  },
+  {
+    "symbol": "TANG.N0000",
+    "name": "TANGERINE BEACH HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 119.5
+  },
+  {
+    "symbol": "TSML.N0000",
+    "name": "TEA SMALLHOLDER FACTORIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 44
+  },
+  {
+    "symbol": "TJL.N0000",
+    "name": "TEEJAY LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 30.5
+  },
+  {
+    "symbol": "TESS.X0000",
+    "name": "TESS AGRO PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1.3
+  },
+  {
+    "symbol": "TESS.N0000",
+    "name": "TESS AGRO PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1.9
+  },
+  {
+    "symbol": "AUTO.N0000",
+    "name": "THE AUTODROME PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 348
+  },
+  {
+    "symbol": "CFLB.N0000",
+    "name": "THE COLOMBO FORT LAND AND BUILDING PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 79.5
+  },
+  {
+    "symbol": "RHTL.N0000",
+    "name": "THE FORTRESS RESORTS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 24.6
+  },
+  {
+    "symbol": "KHC.N0000",
+    "name": "THE KANDY HOTELS COMPANY (1938) PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 16.1
+  },
+  {
+    "symbol": "SERV.N0000",
+    "name": "THE KINGSBURY PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 16.4
+  },
+  {
+    "symbol": "LHCL.N0000",
+    "name": "THE LANKA HOSPITALS CORPORATION PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 105.75
+  },
+  {
+    "symbol": "LHL.N0000",
+    "name": "THE  LIGHTHOUSE  HOTEL  PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 82.6
+  },
+  {
+    "symbol": "TAFL.N0000",
+    "name": "THREE ACRE FARMS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 630
+  },
+  {
+    "symbol": "TKYO.X0000",
+    "name": "TOKYO CEMENT COMPANY (LANKA) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 81
+  },
+  {
+    "symbol": "TKYO.N0000",
+    "name": "TOKYO CEMENT COMPANY (LANKA) PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 98
+  },
+  {
+    "symbol": "TRAN.N0000",
+    "name": "TRANS ASIA HOTELS PLC",
+    "sector": "Speculative",
+    "profile": {
+      "baseVolatility": 0.45,
+      "baseDrift": 0.12
+    },
+    "lastClose": 51
+  },
+  {
+    "symbol": "UBF.N0000",
+    "name": "UB FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 2.9
+  },
+  {
+    "symbol": "UDPL.N0000",
+    "name": "UDAPUSSELLAWA  PLANTATIONS PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 150
+  },
+  {
+    "symbol": "UAL.N0000",
+    "name": "UNION ASSURANCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 73.9
+  },
+  {
+    "symbol": "UBC.N0000",
+    "name": "UNION BANK OF COLOMBO PLC",
+    "sector": "Banks",
+    "profile": {
+      "baseVolatility": 0.15,
+      "baseDrift": 0.05
+    },
+    "lastClose": 13.8
+  },
+  {
+    "symbol": "UCAR.N0000",
+    "name": "UNION CHEMICALS LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 1750.5
+  },
+  {
+    "symbol": "UML.N0000",
+    "name": "UNITED MOTORS LANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 34
+  },
+  {
+    "symbol": "VFIN.N0000",
+    "name": "VALLIBEL FINANCE PLC",
+    "sector": "Diversified Financials",
+    "profile": {
+      "baseVolatility": 0.28,
+      "baseDrift": 0.09
+    },
+    "lastClose": 95.5
+  },
+  {
+    "symbol": "VONE.N0000",
+    "name": "VALLIBEL ONE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 100.5
+  },
+  {
+    "symbol": "VPEL.N0000",
+    "name": "VALLIBEL POWER ERATHNA PLC",
+    "sector": "Energy",
+    "profile": {
+      "baseVolatility": 0.25,
+      "baseDrift": 0.08
+    },
+    "lastClose": 15.5
+  },
+  {
+    "symbol": "VLL.X0000",
+    "name": "VIDULLANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 18.5
+  },
+  {
+    "symbol": "VLL.N0000",
+    "name": "VIDULLANKA PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 23.6
+  },
+  {
+    "symbol": "CITW.N0000",
+    "name": "WASKADUWA BEACH RESORT PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 2
+  },
+  {
+    "symbol": "WATA.N0000",
+    "name": "WATAWALA  PLANTATIONS  PLC",
+    "sector": "Food, Beverage & Tobacco",
+    "profile": {
+      "baseVolatility": 0.18,
+      "baseDrift": 0.04
+    },
+    "lastClose": 43
+  },
+  {
+    "symbol": "WLTH.N0000",
+    "name": "WEALTHTRUST SECURITIES PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 14
+  },
+  {
+    "symbol": "WIND.N0000",
+    "name": "WINDFORCE PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 46.5
+  },
+  {
+    "symbol": "YORK.N0000",
+    "name": "YORK ARCADE HOLDINGS PLC",
+    "sector": "Default",
+    "profile": {
+      "baseVolatility": 0.2,
+      "baseDrift": 0.05
+    },
+    "lastClose": 14.9
+  }
+]
