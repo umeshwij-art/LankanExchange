@@ -15,48 +15,8 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { HelmetProvider } from 'react-helmet-async';
 import DividendDetail from "./pages/DividendDetail";
 import { Toaster } from "sonner";
-import { InvestorInduction } from "./components/InvestorInduction";
-import { Joyride, Step } from "react-joyride";
-
-const TOUR_STEPS: Step[] = [
-  {
-    target: '#main-chart',
-    content: 'Welcome to the SAMP Bank trading desk. Monitor the Colombo Exchange pulse and analyze the ASPI in real-time.',
-  },
-  {
-    target: '#terminal-feed',
-    content: 'Use the Intel Terminal to access AI-powered disclosures and deep-dives on your favorite listed entities.',
-  },
-  {
-    target: '#trading-desk',
-    content: 'Execute mock trades through our institutional-grade simulator to refine your investment strategy.',
-  },
-  {
-    target: '#portfolio-trigger',
-    content: 'Track your holdings and dividends in your virtual portfolio context at any time.',
-  }
-];
-
-const JoyrideComponent = Joyride as any;
 
 export default function App() {
-  const [runTour, setRunTour] = React.useState(false);
-
-  React.useEffect(() => {
-    const hasSeenTour = sessionStorage.getItem('colombo_exchange_tour');
-    if (!hasSeenTour) {
-      setRunTour(true);
-    }
-  }, []);
-
-  const handleTourCallback = (data: any) => {
-    const { status } = data;
-    if (['finished', 'skipped'].includes(status)) {
-      sessionStorage.setItem('colombo_exchange_tour', 'true');
-      setRunTour(false);
-    }
-  };
-
   return (
     <ErrorBoundary>
       <HelmetProvider>
@@ -64,20 +24,6 @@ export default function App() {
           <UIProvider>
             <Router>
             <div className="min-h-screen flex flex-col pt-8">
-              <JoyrideComponent 
-                steps={TOUR_STEPS} 
-                run={runTour} 
-                continuous 
-                showSkipButton 
-                callback={handleTourCallback}
-                styles={{
-                  options: {
-                    primaryColor: '#0055FF',
-                    zIndex: 10000,
-                  }
-                }}
-              />
-              <InvestorInduction />
               <Toaster position="bottom-center" richColors />
             <div className="fixed top-0 left-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em] py-2 text-center z-[100] shadow-md border-b border-white/10">
               SIMULATED DATA: Colombo Exchange Training Platform • Institutional Feed • {new Date().toLocaleDateString()}
