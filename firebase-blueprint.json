@@ -19,6 +19,9 @@
         "availableCash": { "type": "number", "description": "User's spendable virtual cash balance in LKR" },
         "reservedCash": { "type": "number", "description": "Cash locked for pending limit orders" },
         "totalRealizedPL": { "type": "number", "description": "Total realized profit/loss" },
+        "roi": { "type": "number", "description": "Return on Investment percentage" },
+        "virtualBalance": { "type": "number", "description": "Total account value (cash + positions)" },
+        "totalTrades": { "type": "number", "description": "Total number of executed trades" },
         "createdAt": { "type": "string", "format": "date-time" }
       },
       "required": ["uid", "email", "tier", "availableCash", "reservedCash"]

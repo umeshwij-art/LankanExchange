@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const app = express();
-  const PORT = Number(process.env.PORT) || 8080;
+  const port = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
 
@@ -822,7 +822,6 @@ app.get("/api/stocks/top", async (req, res) => {
     });
   }
 
-  const port = Number(process.env.PORT) || 8080;
   app.listen(port, '0.0.0.0', () => {
     console.log(`Colombo Exchange ready on ${port}`);
   });

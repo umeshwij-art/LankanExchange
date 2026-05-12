@@ -27,6 +27,8 @@ interface UserProfile {
   availableCash: number;
   reservedCash: number;
   totalRealizedPL: number;
+  roi: number;
+  virtualBalance: number;
   watchlist: string[];
   billing?: {
     address?: string;
@@ -65,7 +67,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
             setProfile(data);
             
             // Migration: Add missing fields to existing profiles
-            const needsMigration = !data.role || !data.tier || data.availableCash === undefined || data.reservedCash === undefined || data.totalRealizedPL === undefined;
+            const needsMigration = !data.role || !data.tier || data.availableCash === undefined || 
+                                 data.reservedCash === undefined || data.totalRealizedPL === undefined ||
+                                 data.roi === undefined || data.virtualBalance === undefined;
             if (needsMigration) {
               const updates: any = {};
               if (!data.role) updates.role = currentUser.email === 'umeshwij@gmail.com' ? 'admin' : 'user';
@@ -73,6 +77,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               if (data.availableCash === undefined) updates.availableCash = (data as any).virtualBalance ?? 1000000;
               if (data.reservedCash === undefined) updates.reservedCash = 0;
               if (data.totalRealizedPL === undefined) updates.totalRealizedPL = 0;
+              if (data.roi === undefined) updates.roi = 0;
+              if (data.virtualBalance === undefined) updates.virtualBalance = updates.availableCash ?? data.availableCash ?? 1000000;
               if (!data.watchlist) updates.watchlist = [];
 
               updateDoc(userDocRef, updates).catch(err => console.error("Migration failed:", err));
@@ -90,6 +96,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               availableCash: 1000000,
               reservedCash: 0,
               totalRealizedPL: 0,
+              roi: 0,
+              virtualBalance: 1000000,
               watchlist: []
             };
             setDoc(userDocRef, newProfile).catch(err => handleFirestoreError(err, OperationType.CREATE, `users/${currentUser.uid}`));

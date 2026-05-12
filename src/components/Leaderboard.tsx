@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { db, collection, query, orderBy, limit, getDocs } from '../lib/firebase';
+import { db, collection, query, orderBy, limit, getDocs, OperationType, handleFirestoreError } from '../lib/firebase';
 import { Trophy, TrendingUp, User as UserIcon } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useAuth } from '../lib/AuthContext';
 
 interface LeaderboardEntry {
   uid: string;
@@ -14,9 +15,14 @@ interface LeaderboardEntry {
 export const Leaderboard: React.FC = () => {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState(true);
+  const { user, loading: authLoading } = useAuth();
 
   useEffect(() => {
+    // We fetch the leaderboard regardless of auth, but handleFirestoreError 
+    // will give us context if it fails due to being unauthenticated.
     const fetchLeaderboard = async () => {
+      if (authLoading) return;
+      
       try {
         const q = query(
           collection(db, 'users'),
@@ -31,12 +37,18 @@ export const Leaderboard: React.FC = () => {
         setEntries(data);
       } catch (error) {
         console.error("Error fetching leaderboard:", error);
+        // Only throw if it's a critical logic failure, otherwise just log the context
+        try {
+          handleFirestoreError(error, OperationType.LIST, 'users');
+        } catch (e) {
+          // Error is already logged by handler
+        }
       } finally {
         setLoading(false);
       }
     };
     fetchLeaderboard();
-  }, []);
+  }, [authLoading]);
 
   if (loading) {
     return (

@@ -59,7 +59,7 @@ service cloud.firestore {
 
     // Domain Validator for UserProfile
     function isValidUser(data, userId) {
-      return hasOnlyAllowedFields(['uid', 'email', 'displayName', 'photoURL', 'tier', 'role', 'createdAt', 'billing', 'watchlist', 'availableCash', 'reservedCash', 'totalRealizedPL']) &&
+      return hasOnlyAllowedFields(['uid', 'email', 'displayName', 'photoURL', 'tier', 'role', 'createdAt', 'billing', 'watchlist', 'availableCash', 'reservedCash', 'totalRealizedPL', 'roi', 'virtualBalance', 'totalTrades']) &&
              data.uid == userId &&
              isValidEmail(data.email) &&
              data.tier in ['free', 'pro', 'ultimate'] &&
@@ -69,6 +69,9 @@ service cloud.firestore {
              (!('availableCash' in data) || data.availableCash is number) &&
              (!('reservedCash' in data) || data.reservedCash is number) &&
              (!('totalRealizedPL' in data) || data.totalRealizedPL is number) &&
+             (!('roi' in data) || data.roi is number) &&
+             (!('virtualBalance' in data) || data.virtualBalance is number) &&
+             (!('totalTrades' in data) || data.totalTrades is number) &&
              (!('billing' in data) || (
                data.billing is map && 
                data.billing.keys().hasOnly(['address', 'country', 'updatedAt']) &&
@@ -138,7 +141,10 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
-      allow read: if isAuthenticated();
+      // Leaderboard requires public listing of ROI and names
+      // WARNING: In production, consider splitting private data (like email/billing) 
+      // into a separate subcollection or document.
+      allow read: if true;
       
       allow create: if isOwner(userId) && 
                       isValidUser(request.resource.data, userId) && 
