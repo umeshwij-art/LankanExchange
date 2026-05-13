@@ -183,46 +183,26 @@ export default function Home() {
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
             {/* Hero Section */}
-            <div id="main-chart" className="bg-card border border-border rounded-xl p-8 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={MOCK_ASPI_DATA}>
-                    <defs>
-                      <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <Area 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#0ea5e9" 
-                      fillOpacity={1} 
-                      fill="url(#colorValue)" 
-                      strokeWidth={2}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
+            <div id="main-chart" className="bg-primary text-primary-foreground border border-primary/20 rounded-xl p-10 shadow-lg relative overflow-hidden">
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-4">
-                  <Badge variant="outline" className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20 text-[10px] font-bold uppercase tracking-widest">
+                  <Badge variant="outline" className="bg-white/10 text-white border-white/20 text-[10px] font-bold uppercase tracking-widest">
                     Live Market Pulse
                   </Badge>
-                  <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">ASPI: 12,450.20 (+0.45%)</span>
+                  <span className="text-[10px] font-bold text-primary-foreground/60 uppercase tracking-widest">ASPI: 12,450.20 (+0.45%)</span>
                 </div>
-                <h1 className="text-4xl font-bold tracking-tight mb-2">
-                  Colombo <span className="text-primary">Exchange</span>
+                <h1 className="text-4xl font-bold tracking-tight mb-2 text-white">
+                  Colombo <span className="text-blue-300">Exchange</span>
                 </h1>
-                <p className="text-muted-foreground max-w-xl mb-8">
+                <p className="text-blue-100/80 max-w-2xl mb-8 text-lg">
                   Professional-grade market data, technical analysis, and screening tools for the Sri Lankan equity market.
                 </p>
                 
-                <div className="max-w-xl relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <div className="max-w-2xl relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/60" />
                   <Input 
                     placeholder="Search symbols or companies..." 
-                    className="h-12 pl-12 pr-12 text-base rounded-lg border-border bg-muted/50 focus-visible:ring-primary/20 focus-visible:border-primary transition-all"
+                    className="h-12 pl-12 pr-12 text-base rounded-lg border-white/10 bg-white/10 text-white placeholder:text-white/50 focus-visible:ring-white/20 focus-visible:border-white/30 transition-all"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />

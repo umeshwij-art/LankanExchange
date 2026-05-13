@@ -3,11 +3,13 @@ import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as cheerio from 'cheerio';
+import axios from 'axios';
 import { simulator } from './src/lib/simulator/engine.ts';
 import './src/lib/simulator/cronSync.ts';
 import cron from 'node-cron';
 import { syncAnnouncements } from './src/lib/announcementSync.ts';
 import Parser from 'rss-parser';
+import { getMarketData } from './api/market.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -293,22 +295,17 @@ async function getCseData(): Promise<CseStock[]> {
   }
 
   try {
-    const response = await fetch(CSE_API_URL, {
-      method: 'POST',
+    const response = await axios.post(CSE_API_URL, { symbol: "" }, {
       headers: {
         'Content-Type': 'application/json',
         'Referer': 'https://www.cse.lk/',
         'Origin': 'https://www.cse.lk',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
       },
-      body: JSON.stringify({ symbol: "" })
+      timeout: 10000
     });
 
-    if (!response.ok) {
-      throw new Error(`CSE API returned ${response.status}`);
-    }
-
-    const result: any = await response.json();
+    const result = response.data;
     
     const rawStocks = result.reqTradeSummery || result.reqTradeSummary || result.tradeSummary || [];
     
@@ -340,7 +337,7 @@ async function getCseData(): Promise<CseStock[]> {
     
     return stocks;
   } catch (error) {
-    console.error("Error fetching CSE data, using fallback:", error);
+    console.error("Error fetching CSE data with axios, using fallback:", error);
     if (cseCache) return cseCache.data;
     
     const fallbackStocks: CseStock[] = [
@@ -354,6 +351,8 @@ async function getCseData(): Promise<CseStock[]> {
 }
 
   // API Routes
+  app.all("/api/market", getMarketData);
+
   interface NewsItem {
   title: string;
   link: string;
@@ -499,20 +498,18 @@ function getCategoryFromContent(title: string, snippet: string): string {
 app.get("/api/market-status", async (req, res) => {
   try {
     const [statusRes, stocks] = await Promise.all([
-      fetch("https://www.cse.lk/api/marketStatus", {
-        method: 'POST',
+      axios.post("https://www.cse.lk/api/marketStatus", {}, {
         headers: {
           'Content-Type': 'application/json',
           'Referer': 'https://www.cse.lk/',
           'Origin': 'https://www.cse.lk',
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        },
-        body: JSON.stringify({})
+        }
       }),
       getCseData()
     ]);
 
-    const statusData = await statusRes.json();
+    const statusData = statusRes.data;
     
     // Calculate summary stats
     const gainers = stocks.filter(s => s.change > 0).length;
@@ -686,20 +683,16 @@ app.get("/api/stocks/top", async (req, res) => {
     
     const fetchAnnouncementsList = async (sym: string) => {
       try {
-        const response = await fetch("https://www.cse.lk/api/getAnnouncementByCompany", {
-          method: 'POST',
+        const response = await axios.post("https://www.cse.lk/api/getAnnouncementByCompany", `symbol=${sym}`, {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Referer': 'https://www.cse.lk/',
             'Origin': 'https://www.cse.lk',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-          },
-          body: `symbol=${sym}`
+          }
         });
         
-        if (!response.ok) return null;
-        const data = await response.json();
-        return data.reqCompanyAnnouncement || [];
+        return response.data.reqCompanyAnnouncement || [];
       } catch (e) {
         console.error(`Error fetching announcements list for ${sym}:`, e);
         return null;
@@ -708,19 +701,16 @@ app.get("/api/stocks/top", async (req, res) => {
 
     const fetchAnnouncementDetails = async (announcementId: string) => {
       try {
-        const response = await fetch("https://www.cse.lk/api/getGeneralAnnouncementById", {
-          method: 'POST',
+        const response = await axios.post("https://www.cse.lk/api/getGeneralAnnouncementById", `announcementId=${announcementId}`, {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Referer': 'https://www.cse.lk/',
             'Origin': 'https://www.cse.lk',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-          },
-          body: `announcementId=${announcementId}`
+          }
         });
         
-        if (!response.ok) return null;
-        const data = await response.json();
+        const data = response.data;
         if (data.reqAnnouncementDocs && data.reqAnnouncementDocs.length > 0) {
           return `https://cdn.cse.lk/${data.reqAnnouncementDocs[0].fileUrl}`;
         }

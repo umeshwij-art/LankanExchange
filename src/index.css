@@ -86,25 +86,25 @@
 }
 
 :root {
-    --background: #0B0E11;
-    --foreground: #f8fafc;
-    --card: #161A1E;
-    --card-foreground: #f8fafc;
-    --popover: #161A1E;
-    --popover-foreground: #f8fafc;
+    --background: #FFFFFF;
+    --foreground: #0B0E11;
+    --card: #F8FAFC;
+    --card-foreground: #0B0E11;
+    --popover: #FFFFFF;
+    --popover-foreground: #0B0E11;
     --primary: #1E3A8A;
     --primary-foreground: #ffffff;
-    --secondary: #1C2127;
-    --secondary-foreground: #f8fafc;
-    --muted: #161A1E;
-    --muted-foreground: #94a3b8;
-    --accent: #1C2127;
-    --accent-foreground: #f8fafc;
-    --destructive: #f43f5e;
-    --border: #1C2127;
-    --input: #1C2127;
+    --secondary: #F1F5F9;
+    --secondary-foreground: #0B0E11;
+    --muted: #F1F5F9;
+    --muted-foreground: #64748B;
+    --accent: #F1F5F9;
+    --accent-foreground: #0B0E11;
+    --destructive: #EF4444;
+    --border: #E2E8F0;
+    --input: #E2E8F0;
     --ring: #1E3A8A;
-    --radius: 0rem; /* Terminal sharp edges */
+    --radius: 0.25rem; /* Slightly rounded for light mode modern feel, will be zeroed in dark? No, keep consistent or adjust in dark */
 }
 
 .dark {
@@ -114,7 +114,7 @@
     --card-foreground: #f8fafc;
     --popover: #161A1E;
     --popover-foreground: #f8fafc;
-    --primary: #1E3A8A;
+    --primary: #1E40AF;
     --primary-foreground: #ffffff;
     --secondary: #1C2127;
     --secondary-foreground: #f8fafc;
@@ -125,7 +125,8 @@
     --destructive: #f43f5e;
     --border: #1C2127;
     --input: #1C2127;
-    --ring: #1E3A8A;
+    --ring: #1E40AF;
+    --radius: 0rem;
 }
 
 @layer base {
@@ -157,7 +158,7 @@
     @apply transition-colors duration-75;
   }
   table tr:hover {
-    @apply bg-[#1C2127];
+    @apply bg-accent;
   }
 }
 
@@ -183,7 +184,7 @@
 }
 
 .data-row:hover {
-  @apply bg-[#1C2127];
+  @apply bg-accent;
 }
 
 .col-header {

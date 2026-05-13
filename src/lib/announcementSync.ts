@@ -1,5 +1,6 @@
 
 import { db } from './firebase-admin.ts';
+import axios from 'axios';
 
 const CSE_APPROVED_ANNOUNCEMENTS = 'https://www.cse.lk/api/approvedAnnouncement';
 const CSE_FINANCIAL_ANNOUNCEMENTS = 'https://www.cse.lk/api/getFinancialAnnouncement';
@@ -9,20 +10,16 @@ export async function syncAnnouncements() {
   
   try {
     const [approvedRes, financialRes] = await Promise.all([
-      fetch(CSE_APPROVED_ANNOUNCEMENTS, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({})
+      axios.post(CSE_APPROVED_ANNOUNCEMENTS, {}, {
+        headers: { 'Content-Type': 'application/json' }
       }),
-      fetch(CSE_FINANCIAL_ANNOUNCEMENTS, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({})
+      axios.post(CSE_FINANCIAL_ANNOUNCEMENTS, {}, {
+        headers: { 'Content-Type': 'application/json' }
       })
     ]);
 
-    const approvedData = await approvedRes.json();
-    const financialData = await financialRes.json();
+    const approvedData = approvedRes.data;
+    const financialData = financialRes.data;
 
     const allAnnouncements = [
       ...(approvedData.reqApprovedAnnouncement || []),

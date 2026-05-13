@@ -1,15 +1,23 @@
 
 import cron from 'node-cron';
 import { db } from '../firebase-admin.ts';
+import axios from 'axios';
 
 const CSE_API_URL = "https://www.cse.lk/api/tradeSummary";
 
-async function fetchWithRetry(url: string, options: any, retries = 3): Promise<any> {
+async function fetchWithRetry(url: string, data: any, retries = 3): Promise<any> {
   for (let i = 0; i < retries; i++) {
     try {
-      const response = await fetch(url, options);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      return await response.json();
+      const response = await axios.post(url, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Referer': 'https://www.cse.lk/',
+          'Origin': 'https://www.cse.lk',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        },
+        timeout: 15000
+      });
+      return response.data;
     } catch (error) {
       console.error(`Attempt ${i + 1} failed: ${error}`);
       if (i === retries - 1) throw error;
@@ -23,18 +31,9 @@ export async function syncAnchorPrices() {
   console.log(`[Cron] Starting Daily Anchor Price Sync at ${new Date().toISOString()}`);
   
   try {
-    const data = await fetchWithRetry(CSE_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Referer': 'https://www.cse.lk/',
-        'Origin': 'https://www.cse.lk',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      },
-      body: JSON.stringify({})
-    });
+    const data = await fetchWithRetry(CSE_API_URL, {});
 
-    const stocks = data.reqTradeSummery || [];
+    const stocks = data.reqTradeSummery || data.reqTradeSummary || data.tradeSummary || [];
     console.log(`[Cron] Fetched ${stocks.length} stocks from CSE`);
 
     let updatedCount = 0;

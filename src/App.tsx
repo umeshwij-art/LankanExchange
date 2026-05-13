@@ -16,15 +16,29 @@ import { HelmetProvider } from 'react-helmet-async';
 import DividendDetail from "./pages/DividendDetail";
 import { Toaster } from "sonner";
 
+import { ThemeProvider, useTheme } from "./lib/ThemeContext";
+
 export default function App() {
   return (
     <ErrorBoundary>
       <HelmetProvider>
-        <AuthProvider>
-          <UIProvider>
-            <Router>
-            <div className="min-h-screen flex flex-col pt-8">
-              <Toaster position="bottom-center" richColors />
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
+  );
+}
+
+function AppContent() {
+  const { theme } = useTheme();
+  
+  return (
+    <AuthProvider>
+      <UIProvider>
+        <Router>
+          <div className="min-h-screen flex flex-col pt-8 bg-background transition-colors duration-300">
+            <Toaster position="bottom-center" richColors theme={theme} />
             <div className="fixed top-0 left-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em] py-2 text-center z-[100] shadow-md border-b border-white/10">
               SIMULATED DATA: Colombo Exchange Training Platform • Institutional Feed • {new Date().toLocaleDateString()}
             </div>
@@ -58,7 +72,5 @@ export default function App() {
         </Router>
       </UIProvider>
     </AuthProvider>
-  </HelmetProvider>
-</ErrorBoundary>
-);
+  );
 }
