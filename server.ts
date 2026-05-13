@@ -357,13 +357,34 @@ async function getCseData(): Promise<CseStock[]> {
 }
 
   // API Routes
-  app.all("/api/market", (req, res) => {
-    if (typeof handler === 'function') {
-      return handler(req, res);
-    } else if (handler && (handler as any).default) {
-      return (handler as any).default(req, res);
+  app.all("/api/market", async (req, res) => {
+    try {
+      // Adapt Express request to standard Web Request for the Edge handler
+      const url = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+      const webReq = new Request(url, {
+        method: req.method,
+        headers: req.headers as any,
+        body: req.method !== 'GET' && req.method !== 'HEAD' ? JSON.stringify(req.body) : undefined
+      });
+
+      const edgeHandler = typeof handler === 'function' ? handler : (handler as any).default;
+      if (typeof edgeHandler !== 'function') {
+        return res.status(500).send("Market handler not found or invalid");
+      }
+
+      const webRes = await edgeHandler(webReq);
+      
+      // Adapt Web Response back to Express response
+      res.status(webRes.status);
+      webRes.headers.forEach((value, key) => {
+        res.setHeader(key, value);
+      });
+      const body = await webRes.text();
+      res.send(body);
+    } catch (error) {
+      console.error("Error calling Edge handler in local server:", error);
+      res.status(500).send("Market handler error");
     }
-    res.status(500).send("Market handler not found or invalid");
   });
 
   interface NewsItem {
