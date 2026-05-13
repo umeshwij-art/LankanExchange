@@ -9,7 +9,7 @@ import './src/lib/simulator/cronSync.ts';
 import cron from 'node-cron';
 import { syncAnnouncements } from './src/lib/announcementSync.ts';
 import Parser from 'rss-parser';
-import { getMarketData } from './api/market.ts';
+import handler from './api/market.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -351,7 +351,7 @@ async function getCseData(): Promise<CseStock[]> {
 }
 
   // API Routes
-  app.all("/api/market", getMarketData);
+  app.all("/api/market", handler);
 
   interface NewsItem {
   title: string;

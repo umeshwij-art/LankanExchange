@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
 
-export async function getMarketData(req: Request, res: Response) {
+export default async function handler(req: Request, res: Response) {
   // Clear CORS restrictions so your React frontend can talk to this endpoint
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
