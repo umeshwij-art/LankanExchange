@@ -2,11 +2,12 @@ import axios from 'axios';
 import { Request, Response } from 'express';
 
 export async function getMarketData(req: Request, res: Response) {
-  // Clear CORS for your front-end domain
+  // Clear CORS restrictions so your React frontend can talk to this endpoint
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
+  // Handle browser preflight options request
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -18,14 +19,18 @@ export async function getMarketData(req: Request, res: Response) {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Referer': 'https://www.cse.lk/',
-        'Origin': 'https://www.cse.lk'
+        'Origin': 'https://www.cse.lk',
+        'Referer': 'https://www.cse.lk/'
       },
       timeout: 10000 // 10 second timeout protection
     });
 
     // 2. Format the response array cleanly for your Stochastic/GBM algorithm
-    const rawStocks = cseResponse.data.reqTradeSummery || cseResponse.data.reqTradeSummary || cseResponse.data.tradeSummary || [];
+    // Handling both direct array and the standard CSE object wrapper for robustness
+    const rawStocks = Array.isArray(cseResponse.data) 
+      ? cseResponse.data 
+      : (cseResponse.data.reqTradeSummery || cseResponse.data.reqTradeSummary || cseResponse.data.tradeSummary || []);
+
     const formattedData = rawStocks.map((stock: any) => ({
       symbol: stock.symbol || 'UNKNOWN',
       name: stock.companyName || stock.name || '',
@@ -37,6 +42,7 @@ export async function getMarketData(req: Request, res: Response) {
 
     // Return the clean anchor price payload to your application
     return res.status(200).json({ success: true, data: formattedData });
+
   } catch (error: any) {
     console.error("CSE Connection Error:", error.message);
     return res.status(500).json({ 
