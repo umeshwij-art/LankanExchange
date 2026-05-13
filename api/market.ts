@@ -26,7 +26,6 @@ export async function getMarketData(req: Request, res: Response) {
     });
 
     // 2. Format the response array cleanly for your Stochastic/GBM algorithm
-    // Handling both direct array and the standard CSE object wrapper for robustness
     const rawStocks = Array.isArray(cseResponse.data) 
       ? cseResponse.data 
       : (cseResponse.data.reqTradeSummery || cseResponse.data.reqTradeSummary || cseResponse.data.tradeSummary || []);
