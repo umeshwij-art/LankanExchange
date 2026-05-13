@@ -1,64 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Activity, TrendingUp, TrendingDown, Clock, Search, Filter, Globe, ChevronRight, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Activity, Clock, Search, Globe, ChevronRight, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
-
-interface MarketPrice {
-  symbol: string;
-  name: string;
-  price: number;
-  change: number;
-  percentageChange: number;
-  sharevolume: number;
-  marketCap?: number;
-}
+import { useMarketData } from '../hooks/useMarketData';
 
 export const MarketTerminal: React.FC = () => {
-  const [data, setData] = useState<MarketPrice[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { stocks, loading, error } = useMarketData(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  const fetchMarketPrices = async () => {
-    try {
-      const response = await fetch('/api/market');
-      if (!response.ok) throw new Error('Failed to fetch from proxy');
-      const marketData = await response.json();
-      
-      const rawStocks = marketData.reqTradeSummery || marketData.reqTradeSummary || marketData.tradeSummary || [];
-      const parsedData: MarketPrice[] = rawStocks.map((s: any) => ({
-        symbol: s.symbol || "",
-        name: s.name || s.companyName || "",
-        price: parseFloat(s.price || s.lastTradedPrice || 0),
-        change: parseFloat(s.change || 0),
-        percentageChange: parseFloat(s.percentageChange || 0),
-        sharevolume: parseFloat(s.sharevolume || s.volume || 0),
-        marketCap: parseFloat(s.marketCap || 0)
-      }));
-
-      setData(parsedData);
-      setLastUpdated(new Date());
-      setLoading(false);
-    } catch (err: any) {
-      console.error("Market Proxy Error:", err);
-      setError(err.message);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchMarketPrices();
-    const interval = setInterval(fetchMarketPrices, 30000); // 30s auto-refresh
-    return () => clearInterval(interval);
-  }, []);
-
-  const filteredData = data.filter(item => 
+  const filteredData = stocks.filter(item => 
     item.symbol.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   ).slice(0, 15); // Show top 15 in terminal
+
+  const lastUpdated = new Date(); // In a real app we'd get this from the hook
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden flex flex-col h-full shadow-2xl">
@@ -76,7 +32,7 @@ export const MarketTerminal: React.FC = () => {
           <div className="flex items-center gap-1.5">
             <Clock className="h-3 w-3 text-slate-500" />
             <span className="text-[9px] font-mono text-slate-500 uppercase">
-              {lastUpdated ? lastUpdated.toLocaleTimeString() : 'Syncing...'}
+              {loading ? 'Syncing...' : lastUpdated.toLocaleTimeString()}
             </span>
           </div>
         </div>
@@ -95,9 +51,9 @@ export const MarketTerminal: React.FC = () => {
           />
         </div>
         <button 
-          onClick={() => fetchMarketPrices()}
           className="p-1.5 hover:bg-slate-800 rounded text-slate-500 hover:text-emerald-400 transition-colors"
           title="Force Re-Sync"
+          onClick={() => window.location.reload()}
         >
           <Zap className="h-3.5 w-3.5" />
         </button>
@@ -112,10 +68,10 @@ export const MarketTerminal: React.FC = () => {
       </div>
 
       {/* Terminal Body */}
-      <div className="flex-grow overflow-y-auto bg-slate-950 custom-scrollbar">
-        {loading && data.length === 0 ? (
+      <div className="flex-grow overflow-y-auto bg-slate-950 custom-scrollbar min-h-[400px]">
+        {loading && stocks.length === 0 ? (
           <div className="p-4 space-y-3">
-            {[...Array(8)].map((_, i) => (
+            {[...Array(12)].map((_, i) => (
               <div key={i} className="flex justify-between gap-4">
                 <Skeleton className="h-3 w-16 bg-slate-800" />
                 <Skeleton className="h-3 w-full bg-slate-800" />
@@ -131,7 +87,7 @@ export const MarketTerminal: React.FC = () => {
               <p className="text-[10px] text-slate-600 font-mono">{error}</p>
             </div>
             <button 
-              onClick={() => fetchMarketPrices()}
+              onClick={() => window.location.reload()}
               className="text-[9px] font-bold bg-slate-800 hover:bg-slate-700 px-4 py-1.5 rounded transition-all uppercase"
             >
               Retry Connection
@@ -140,31 +96,41 @@ export const MarketTerminal: React.FC = () => {
         ) : (
           <div className="divide-y divide-slate-900">
             <AnimatePresence mode="popLayout">
-              {filteredData.map((stock) => (
-                <motion.div 
-                  key={stock.symbol}
-                  initial={{ opacity: 0, x: -5 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="grid grid-cols-[80px_1fr_80px_80px] px-4 py-2 hover:bg-slate-900 group cursor-pointer transition-colors"
-                >
-                  <span className="text-[10px] font-bold text-slate-300 group-hover:text-emerald-400 transition-colors font-mono tracking-tighter">
-                    {stock.symbol}
-                  </span>
-                  <span className="text-[9px] text-slate-500 truncate px-2 group-hover:text-slate-300 transition-colors capitalize">
-                    {stock.name.toLowerCase()}
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-300 text-right tabular-nums">
-                    {stock.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
-                  </span>
-                  <span className={cn(
-                    "text-[10px] font-mono text-right tabular-nums",
-                    stock.change > 0 ? "text-emerald-500" : stock.change < 0 ? "text-rose-500" : "text-slate-500"
-                  )}>
-                    {stock.change > 0 ? "+" : ""}{stock.percentageChange.toFixed(2)}%
-                  </span>
-                </motion.div>
-              ))}
+              {filteredData.map((stock) => {
+                const change = stock.currentPrice - stock.anchorPrice;
+                const percentageChange = (change / stock.anchorPrice) * 100;
+                const isPositive = change >= 0;
+
+                return (
+                  <motion.div 
+                    key={stock.symbol}
+                    initial={{ opacity: 0, x: -5 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="grid grid-cols-[80px_1fr_80px_80px] px-4 py-2 hover:bg-slate-900 group cursor-pointer transition-colors"
+                  >
+                    <span className="text-[10px] font-bold text-slate-300 group-hover:text-emerald-400 transition-colors font-mono tracking-tighter">
+                      {stock.symbol}
+                    </span>
+                    <span className="text-[9px] text-slate-500 truncate px-2 group-hover:text-slate-300 transition-colors capitalize">
+                      {(stock.name || '').toLowerCase()}
+                    </span>
+                    <span className={cn(
+                      "text-[10px] font-mono text-right tabular-nums transition-colors duration-500",
+                      stock.previousPrice && stock.currentPrice > stock.previousPrice ? "text-emerald-400" : 
+                      stock.previousPrice && stock.currentPrice < stock.previousPrice ? "text-rose-400" : "text-slate-300"
+                    )}>
+                      {stock.currentPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    </span>
+                    <span className={cn(
+                      "text-[10px] font-mono text-right tabular-nums",
+                      isPositive ? "text-emerald-500" : "text-rose-500"
+                    )}>
+                      {isPositive ? "+" : ""}{percentageChange.toFixed(2)}%
+                    </span>
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
             
             {filteredData.length === 0 && (
@@ -181,11 +147,11 @@ export const MarketTerminal: React.FC = () => {
         <div className="flex gap-4">
           <div className="flex flex-col">
             <span className="text-[7px] font-bold text-slate-600 uppercase tracking-widest">Total Samples</span>
-            <span className="text-[10px] font-mono text-slate-400">{data.length} Stocks</span>
+            <span className="text-[10px] font-mono text-slate-400">{stocks.length} Stocks</span>
           </div>
           <div className="flex flex-col border-l border-slate-800 pl-4">
             <span className="text-[7px] font-bold text-slate-600 uppercase tracking-widest">Market Feed</span>
-            <span className="text-[10px] font-mono text-emerald-500 animate-pulse">STREAMING</span>
+            <span className="text-[10px] font-mono text-emerald-500 animate-pulse uppercase">Active Simulation</span>
           </div>
         </div>
         <button className="flex items-center gap-1.5 text-[9px] font-bold text-slate-500 hover:text-white transition-colors group">

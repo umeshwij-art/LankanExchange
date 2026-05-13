@@ -1,6 +1,6 @@
 {
   "name": "Colombo Exchange",
-  "description": "A comprehensive stock screening and analysis tool for the Colombo Exchange, featuring real-time data, charts, and detailed financial insights.",
+  "description": "A comprehensive stock market simulator and analysis tool for the Colombo Exchange, featuring real-time data simulation, charts, and detailed financial insights.",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }
