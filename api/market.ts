@@ -15,24 +15,21 @@ export async function getMarketData(req: Request, res: Response) {
   try {
     // 1. Fetch data from the unofficial CSE endpoint
     // We add a desktop User-Agent header so the CSE servers don't flag the request as a bot
-    const cseResponse = await axios.post('https://www.cse.lk/api/tradeSummary', {}, {
+    const cseResponse = await axios.post('https://www.cse.lk/api/todaySharePrice', {}, {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Origin': 'https://www.cse.lk',
         'Referer': 'https://www.cse.lk/'
       },
-      timeout: 10000 // 10 second timeout protection
+      timeout: 15000 // 15 second timeout protection for often slow CSE API
     });
 
-    // 2. Format the response array cleanly for your Stochastic/GBM algorithm
-    const rawStocks = Array.isArray(cseResponse.data) 
-      ? cseResponse.data 
-      : (cseResponse.data.reqTradeSummery || cseResponse.data.reqTradeSummary || cseResponse.data.tradeSummary || []);
-
+    // 2. Format the response payload from 'reqTodaySharePrice' into our unified stock dataset structure
+    const rawStocks = cseResponse.data.reqTodaySharePrice || [];
     const formattedData = rawStocks.map((stock: any) => ({
       symbol: stock.symbol || 'UNKNOWN',
-      name: stock.companyName || stock.name || '',
+      name: stock.name || stock.companyName || '',
       anchorPrice: parseFloat(stock.lastTradedPrice || stock.price || 0),
       high: parseFloat(stock.high || 0),
       low: parseFloat(stock.low || 0),
