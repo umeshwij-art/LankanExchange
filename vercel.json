@@ -1,4 +1,10 @@
 {
   "trailingSlash": false,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/market",
+      "destination": "/api/market.js"
+    }
+  ]
 }
