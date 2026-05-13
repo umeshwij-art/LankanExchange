@@ -1,6 +1,6 @@
 
 import type { Stock, SimulatorState } from './types.ts';
-import stockData from './stockDatabase.json' with { type: 'json' };
+import stockData from './stockDatabase.json';
 
 class SimulatorEngine {
   private state: SimulatorState;

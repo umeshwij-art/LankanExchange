@@ -1,6 +1,6 @@
 
 import admin from 'firebase-admin';
-import firebaseConfig from '../../firebase-applet-config.json' with { type: 'json' };
+import firebaseConfig from '../../firebase-applet-config.json';
 
 if (!admin.apps.length) {
   admin.initializeApp({

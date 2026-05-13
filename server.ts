@@ -15,6 +15,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function startServer() {
+  process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  });
+
+  process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+  });
+
   const app = express();
   const port = Number(process.env.PORT) || 3000;
 
@@ -351,7 +359,14 @@ async function getCseData(): Promise<CseStock[]> {
 }
 
   // API Routes
-  app.all("/api/market", handler);
+  app.all("/api/market", (req, res) => {
+    if (typeof handler === 'function') {
+      return handler(req, res);
+    } else if (handler && (handler as any).default) {
+      return (handler as any).default(req, res);
+    }
+    res.status(500).send("Market handler not found or invalid");
+  });
 
   interface NewsItem {
   title: string;
