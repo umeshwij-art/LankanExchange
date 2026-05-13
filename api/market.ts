@@ -14,18 +14,18 @@ export default async function handler(req: Request, res: Response) {
 
   try {
     // 1. Fetch data from the unofficial CSE endpoint
-    // We add a desktop User-Agent header so the CSE servers don't flag the request as a bot
-    const cseResponse = await axios.post('https://www.cse.lk/api/todaySharePrice', {}, {
+    // We target cse.lk directly as per infrastructure requirements
+    const cseResponse = await axios.post('https://cse.lk/api/todaySharePrice', {}, {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Origin': 'https://www.cse.lk',
         'Referer': 'https://www.cse.lk/'
       },
-      timeout: 15000 // 15 second timeout protection for often slow CSE API
+      timeout: 15000 
     });
 
-    // 2. Format the response payload from 'reqTodaySharePrice' into our unified stock dataset structure
+    // 2. Format the response payload primarily from 'reqTodaySharePrice'
     const rawStocks = cseResponse.data.reqTodaySharePrice || [];
     const formattedData = rawStocks.map((stock: any) => ({
       symbol: stock.symbol || 'UNKNOWN',

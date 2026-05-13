@@ -2,7 +2,6 @@ import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
-import * as cheerio from 'cheerio';
 import axios from 'axios';
 import { simulator } from './src/lib/simulator/engine.ts';
 import './src/lib/simulator/cronSync.ts';
@@ -10,9 +9,8 @@ import cron from 'node-cron';
 import { syncAnnouncements } from './src/lib/announcementSync.ts';
 import Parser from 'rss-parser';
 import handler from './api/market.ts';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { db } from './src/lib/firebase-admin.ts';
+import { syncAnchorPrices } from './src/lib/simulator/cronSync.ts';
 
 async function startServer() {
   process.on('unhandledRejection', (reason, promise) => {
@@ -24,7 +22,7 @@ async function startServer() {
   });
 
   const app = express();
-  const port = Number(process.env.PORT) || 3000;
+  const port = 3000;
 
   app.use(express.json());
 
@@ -303,7 +301,7 @@ async function getCseData(): Promise<CseStock[]> {
   }
 
   try {
-    const response = await axios.post(CSE_API_URL, { symbol: "" }, {
+    const response = await axios.post(CSE_API_URL, {}, {
       headers: {
         'Content-Type': 'application/json',
         'Referer': 'https://www.cse.lk/',
@@ -782,7 +780,6 @@ app.get("/api/stocks/top", async (req, res) => {
   });
 
   app.post("/api/admin/sync-anchor-prices", async (req, res) => {
-    const { syncAnchorPrices } = await import("./src/lib/simulator/cronSync.ts");
     try {
       await syncAnchorPrices();
       res.json({ message: "Sync triggered successfully" });
@@ -802,7 +799,6 @@ app.get("/api/stocks/top", async (req, res) => {
 
   app.get("/api/announcements", async (req, res) => {
     try {
-      const { db } = await import("./src/lib/firebase-admin.ts");
       const snapshot = await db.collection('announcements').orderBy('date', 'desc').limit(50).get();
       const announcements = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       res.json(announcements);
