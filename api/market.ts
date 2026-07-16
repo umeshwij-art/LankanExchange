@@ -12,8 +12,8 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    // 1. Fetch data from the live verified exchange endpoint using Axios (standard Node runtime)
-    const cseResponse = await axios.post('https://cse.lk/api/todaySharePrice', {}, {
+        // 1. Fetch data from the live verified exchange endpoint using Axios (standard Node runtime)
+    const cseResponse = await axios.post('https://www.cse.lk/api/todaySharePrice', {}, {
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',

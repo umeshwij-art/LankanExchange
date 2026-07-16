@@ -21,7 +21,7 @@ export default function DividendDetail() {
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        console.warn("Stock info fetch deferred:", err);
         setLoading(false);
       });
   }, [symbol]);

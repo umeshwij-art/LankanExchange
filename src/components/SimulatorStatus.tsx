@@ -22,7 +22,7 @@ export const SimulatorStatus: React.FC = () => {
         // Show top 5 most active
         setStocks(Array.isArray(data) ? data.slice(0, 5) : []);
       } catch (e) {
-        console.error("Failed to fetch simulator stocks:", e);
+        console.warn("Simulator stocks fetch deferred (this is expected during server startup/initialization):", e);
       }
     };
 

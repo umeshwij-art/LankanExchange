@@ -12,23 +12,6 @@ import handler from './api/market.ts';
 import { db } from './src/lib/firebase-admin.ts';
 import { syncAnchorPrices } from './src/lib/simulator/cronSync.ts';
 
-import { GoogleGenAI } from "@google/genai";
-
-  app.post("/api/critique", async (req, res) => {
-    const { type, quantity, symbol, price } = req.body;
-    try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `Provide a 1-sentence behavioral critique for this mock trade: ${type.toUpperCase()} ${quantity} shares of ${symbol} at LKR ${price}.`,
-        config: { systemInstruction: "You are a professional trading coach. Be concise and insightful." }
-      });
-      res.json({ critique: response.text || "Trade executed successfully." });
-    } catch (error) {
-      res.json({ critique: "Trade executed successfully." });
-    }
-  });
-
 async function startServer() {
   process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection at:', promise, 'reason:', reason);

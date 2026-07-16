@@ -79,14 +79,14 @@ export default function Home() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.warn("Top stocks fetch deferred:", err);
         setLoading(false);
       });
 
     fetch("/api/market-status")
       .then((res) => res.json())
       .then((data) => setMarketStatus(data))
-      .catch(console.error);
+      .catch((err) => console.warn("Market status fetch deferred:", err));
   }, []);
 
   useEffect(() => {
