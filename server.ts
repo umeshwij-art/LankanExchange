@@ -11,6 +11,7 @@ import Parser from 'rss-parser';
 import handler from './api/market.ts';
 import { db } from './src/lib/firebase-admin.ts';
 import { syncAnchorPrices } from './src/lib/simulator/cronSync.ts';
+import { getCseData, getMarketStatus } from './src/lib/cseScraper.ts';
 
 async function startServer() {
   process.on('unhandledRejection', (reason, promise) => {
@@ -67,28 +68,6 @@ async function startServer() {
   });
 
   // Colombo Exchange API Integration
-const CSE_API_URL = "https://www.cse.lk/api/tradeSummary";
-
-interface CseStock {
-  symbol: string;
-  name: string;
-  price: number;
-  change: number;
-  percentageChange: number;
-  high?: number;
-  low?: number;
-  sharevolume: number;
-  tradevolume?: number;
-  turnover?: number;
-  marketCap?: number;
-  previousClose?: number;
-  open?: number;
-  lastTradedTime?: number | string;
-  lastupdated?: string;
-  sector?: string;
-  board?: string;
-}
-
 const SECTOR_MAPPING: Record<string, string> = {
   'JKH': 'Capital Goods',
   'DIAL': 'Telecommunication Services',
@@ -318,66 +297,6 @@ async function getCseData(): Promise<CseStock[]> {
     if (rawStocks.length === 0) {
       throw new Error("Empty stock data from CSE API");
     }
-
-    const stocks: CseStock[] = rawStocks.map((s: any) => ({
-      symbol: s.symbol || s.ticker || s.stockCode || "",
-      name: s.name || s.companyName || s.stockName || "",
-      price: parseFloat(s.price || s.lastTradedPrice || s.lastPrice || 0),
-      change: parseFloat(s.change || s.netChange || 0),
-      percentageChange: parseFloat(s.percentageChange || s.percentChange || s.pChange || 0),
-      high: parseFloat(s.high || s.maxPrice || 0),
-      low: parseFloat(s.low || s.minPrice || 0),
-      sharevolume: parseFloat(s.sharevolume || s.volume || s.qty || 0),
-      marketCap: parseFloat(s.marketCap || s.mktCap || 0),
-      previousClose: parseFloat(s.previousClose || s.prevClose || 0),
-      open: parseFloat(s.open || s.openPrice || 0),
-      lastTradedTime: s.lastTradedTime || Date.now(),
-      sector: s.sector,
-      board: s.board
-    }));
-    
-    cseCache = {
-      data: stocks,
-      timestamp: Date.now()
-    };
-    
-    return stocks;
-  } catch (error) {
-    console.error("Error fetching CSE data with axios, using fallback:", error);
-    if (cseCache) return cseCache.data;
-    
-    const fallbackStocks: CseStock[] = [
-      { symbol: "SAMP.N0000", name: "SAMPATH BANK PLC", price: 78.50, change: 1.20, percentageChange: 1.55, sharevolume: 1200000, tradevolume: 450, turnover: 94200000, lastupdated: new Date().toISOString(), sector: 'Banking', board: 'Main Board' },
-      { symbol: "JKH.N0000", name: "JOHN KEELLS HOLDINGS PLC", price: 195.00, change: -2.50, percentageChange: -1.27, sharevolume: 850000, tradevolume: 320, turnover: 165750000, lastupdated: new Date().toISOString(), sector: 'Capital Goods', board: 'Main Board' },
-      { symbol: "COMB.N0000", name: "COMMERCIAL BANK OF CEYLON PLC", price: 92.30, change: 0.80, percentageChange: 0.87, sharevolume: 980000, tradevolume: 280, turnover: 90454000, lastupdated: new Date().toISOString(), sector: 'Banking', board: 'Main Board' },
-      { symbol: "LIOC.N0000", name: "LANKA IOC PLC", price: 112.00, change: 4.50, percentageChange: 4.19, sharevolume: 2500000, tradevolume: 1200, turnover: 280000000, lastupdated: new Date().toISOString(), sector: 'Energy', board: 'Main Board' }
-    ];
-    return fallbackStocks;
-  }
-}
-
-  // API Routes
-  app.all("/api/market", (req, res) => {
-    if (typeof handler === 'function') {
-      return handler(req, res);
-    } else if (handler && (handler as any).default) {
-      return (handler as any).default(req, res);
-    }
-    res.status(500).send("Market handler not found or invalid");
-  });
-
-  interface NewsItem {
-  title: string;
-  link: string;
-  date: string;
-  summary: string;
-  source: string;
-}
-
-let newsCache: {
-  data: NewsItem[];
-  timestamp: number;
-} | null = null;
 
 const parser = new Parser();
 
