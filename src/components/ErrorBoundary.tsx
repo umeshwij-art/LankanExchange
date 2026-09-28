@@ -1,54 +1,26 @@
+import { Component, type ErrorInfo, type ReactNode } from 'react';
 
-import React, { ErrorInfo, ReactNode } from "react";
+export class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+  state = { error: null as Error | null };
 
-interface Props {
-  children?: ReactNode;
-  fallback?: ReactNode;
-}
-
-interface State {
-  hasError: boolean;
-  error: Error | null;
-}
-
-export class ErrorBoundary extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      hasError: false,
-      error: null,
-    };
+  static getDerivedStateFromError(error: Error) {
+    return { error };
   }
 
-  public static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error('Uncaught error', error, info);
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
-  }
-
-  public render() {
-    if (this.state.hasError) {
-      if (this.props.fallback) {
-        return this.props.fallback;
-      }
-      return (
-        <div className="p-6 bg-red-50 border border-red-200 rounded-xl m-4">
-          <h2 className="text-lg font-bold text-red-800 mb-2">Something went wrong</h2>
-          <p className="text-sm text-red-600 mb-4">
-            {this.state.error?.message || "An unexpected error occurred."}
-          </p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition-colors"
-          >
-            Reload Page
-          </button>
-        </div>
-      );
-    }
-
-    return this.props.children;
+  render() {
+    if (!this.state.error) return this.props.children;
+    return (
+      <div className="mx-auto mt-16 max-w-md rounded-xl border border-line bg-surface p-6 text-center">
+        <h2 className="text-lg font-semibold">Something went wrong</h2>
+        <p className="mt-2 text-sm text-muted">{this.state.error.message}</p>
+        <button className="btn-primary mt-4" onClick={() => window.location.reload()}>
+          Reload
+        </button>
+      </div>
+    );
   }
 }

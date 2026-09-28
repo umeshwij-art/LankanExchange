@@ -1,10 +1,14 @@
 {
-  "trailingSlash": false,
-  "cleanUrls": true,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "regions": ["sin1"],
+  "crons": [
+    { "path": "/api/cron/eod", "schedule": "45 9 * * 1-5" },
+    { "path": "/api/cron/eod", "schedule": "30 12 * * 1-5" }
+  ],
   "rewrites": [
-    {
-      "source": "/api/market",
-      "destination": "/api/market.js"
-    }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
