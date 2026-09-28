@@ -83,26 +83,25 @@
   }
 }
 
-@layer components {
-  .card {
-    @apply rounded-xl border border-line bg-surface;
-  }
-  .num {
-    @apply font-mono tabular-nums;
-  }
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  .btn-primary {
-    @apply btn bg-brand text-brand-ink hover:opacity-90;
-  }
-  .btn-ghost {
-    @apply btn border border-line bg-surface hover:bg-surface-2;
-  }
-  .input {
-    @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20;
-  }
-  .label {
-    @apply text-xs font-medium uppercase tracking-wide text-muted;
-  }
+/* Custom utilities (Tailwind v4 only lets @apply reuse classes declared with @utility). */
+@utility card {
+  @apply rounded-xl border border-line bg-surface;
+}
+@utility num {
+  @apply font-mono tabular-nums;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-brand text-brand-ink hover:opacity-90;
+}
+@utility btn-ghost {
+  @apply btn border border-line bg-surface hover:bg-surface-2;
+}
+@utility input {
+  @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20;
+}
+@utility label {
+  @apply text-xs font-medium uppercase tracking-wide text-muted;
 }
